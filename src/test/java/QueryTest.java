@@ -7,10 +7,9 @@ public class QueryTest {
 
     @Test
     public void validateQueryBuilder() throws TableNotAnnotatedException {
-        Query q = new Query.Builder(Student.class)
+        Query.Builder q = new Query.Builder(Student.class)
                 .select(new String[]{"name", "student_id"})
-                .where("student_name like '%Ramesh%'")
-                .build();
+                .where("student_name like '%Ramesh%'");
         System.out.println(q.getQuery());
     }
 

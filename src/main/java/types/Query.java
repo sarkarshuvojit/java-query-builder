@@ -2,10 +2,6 @@ package types;
 
 import annotations.Table;
 import exceptions.TableNotAnnotatedException;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.extern.java.Log;
 
 import java.util.ArrayList;
@@ -14,7 +10,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Log
-public class Query {
+public class Query  {
 
     private String tableName;
     private List<String> selectionSet;
@@ -23,7 +19,7 @@ public class Query {
     private List<Join> joins;
     private List<String> where;
 
-    public String getQuery() {
+    String getQuery() {
 
         String selectStatement = selectionSet.stream().map(
                 (fieldName) -> {
@@ -50,7 +46,11 @@ public class Query {
 
     }
 
-    public static class Builder {
+    List getRecords() {
+        return new ArrayList<>();
+    }
+
+    public static class Builder  {
 
 
         private String tableName;
@@ -93,7 +93,7 @@ public class Query {
             return this;
         }
 
-        public Query build() {
+        private Query _build() {
             Query q = new Query();
             q.tableName = this.tableName;
             q.selectionSet = this.selectionSet;
@@ -102,6 +102,18 @@ public class Query {
             q.offset = this.offset;
             q.where = this.where;
             return q;
+        }
+
+        public Query build() {
+            return _build();
+        }
+
+        public String getQuery() {
+            return _build().getQuery();
+        }
+
+        public List getRecords() {
+            return _build().getRecords();
         }
 
     }
