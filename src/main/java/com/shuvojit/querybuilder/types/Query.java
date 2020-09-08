@@ -27,19 +27,19 @@ public class Query  {
                 }
         ).collect(Collectors.joining(","));
 
-        String joinStatement = String.join("and\n", joins.stream().map(
+        String joinStatement = joins.stream().map(
                 join -> {
                     return join.getJoinString();
                 }
-        ).collect(Collectors.toList()));
+        ).collect(Collectors.joining("and\n"));
 
         String whereStatement = String.join(" and\n", where);
 
         List<String> queryParts = new ArrayList<>();
         queryParts.add(String.format("select %s", selectStatement));
         queryParts.add(String.format("from %s", tableName));
-        queryParts.add(joinStatement);
-        queryParts.add(String.format("where %s", whereStatement));
+        if (joinStatement.length() > 0) queryParts.add(joinStatement);
+        if (whereStatement.length() > 0) queryParts.add(String.format("where %s", whereStatement));
         queryParts.add(String.format("limit %d, %d", limit, offset));
 
         return String.join("\n", queryParts);
