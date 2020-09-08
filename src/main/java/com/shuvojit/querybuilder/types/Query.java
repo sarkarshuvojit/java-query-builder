@@ -40,7 +40,7 @@ public class Query  {
         queryParts.add(String.format("from %s", tableName));
         if (joinStatement.length() > 0) queryParts.add(joinStatement);
         if (whereStatement.length() > 0) queryParts.add(String.format("where %s", whereStatement));
-        queryParts.add(String.format("limit %d, %d", limit, offset));
+        queryParts.add(String.format("limit %d, %d", offset, limit));
 
         return String.join("\n", queryParts);
 
