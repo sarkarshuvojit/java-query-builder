@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import types.Join;
-import types.JoinType;
+import com.shuvojit.querybuilder.types.Join;
+import com.shuvojit.querybuilder.types.JoinType;
 
 public class JoinTypeTest {
 

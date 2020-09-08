@@ -1,7 +1,7 @@
-package types;
+package com.shuvojit.querybuilder.types;
 
-import annotations.Table;
-import exceptions.TableNotAnnotatedException;
+import com.shuvojit.querybuilder.annotations.Table;
+import com.shuvojit.querybuilder.exceptions.TableNotAnnotatedException;
 import lombok.extern.java.Log;
 
 import java.util.ArrayList;

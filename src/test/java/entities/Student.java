@@ -1,6 +1,6 @@
 package entities;
 
-import annotations.Table;
+import com.shuvojit.querybuilder.annotations.Table;
 import lombok.Data;
 
 @Table(name="student")

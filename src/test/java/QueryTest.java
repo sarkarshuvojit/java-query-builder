@@ -1,7 +1,7 @@
 import entities.Student;
-import exceptions.TableNotAnnotatedException;
+import com.shuvojit.querybuilder.exceptions.TableNotAnnotatedException;
 import org.junit.jupiter.api.Test;
-import types.Query;
+import com.shuvojit.querybuilder.types.Query;
 
 public class QueryTest {
 

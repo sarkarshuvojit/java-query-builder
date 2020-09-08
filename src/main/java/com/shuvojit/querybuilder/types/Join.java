@@ -1,4 +1,4 @@
-package types;
+package com.shuvojit.querybuilder.types;
 
 import lombok.Builder;
 import lombok.Data;

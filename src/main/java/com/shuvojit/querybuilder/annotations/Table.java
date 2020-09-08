@@ -1,4 +1,4 @@
-package annotations;
+package com.shuvojit.querybuilder.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
